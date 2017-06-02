@@ -1,4 +1,5 @@
 import UIKit
+import AudioKit
 
 class MainViewController: UIViewController {
     
@@ -7,6 +8,12 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let oscillator = AKOscillator()
+        oscillator.amplitude = 0.1
+        AudioKit.output = oscillator
+        AudioKit.start()
+        oscillator.start()
     }
 
     //MARK: - Piano Key Actions
