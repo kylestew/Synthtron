@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		FF58A2831EE100F100402855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2821EE100F100402855 /* AppDelegate.swift */; };
-		FF58A2851EE100F100402855 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2841EE100F100402855 /* ViewController.swift */; };
+		FF58A2851EE100F100402855 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2841EE100F100402855 /* MainViewController.swift */; };
 		FF58A2881EE100F100402855 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58A2861EE100F100402855 /* Main.storyboard */; };
 		FF58A28A1EE100F100402855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF58A2891EE100F100402855 /* Assets.xcassets */; };
 		FF58A28D1EE100F100402855 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58A28B1EE100F100402855 /* LaunchScreen.storyboard */; };
 		FF58A2981EE100F100402855 /* SynthtronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2971EE100F100402855 /* SynthtronTests.swift */; };
+		FF989A3D1EE1179C00D1148B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +29,7 @@
 /* Begin PBXFileReference section */
 		FF58A27F1EE100F000402855 /* Synthtron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synthtron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF58A2821EE100F100402855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF58A2841EE100F100402855 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF58A2841EE100F100402855 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FF58A2871EE100F100402855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF58A2891EE100F100402855 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF58A28C1EE100F100402855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 		FF58A2931EE100F100402855 /* SynthtronTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SynthtronTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF58A2971EE100F100402855 /* SynthtronTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthtronTests.swift; sourceTree = "<group>"; };
 		FF58A2991EE100F100402855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,10 @@
 		FF58A2811EE100F000402855 /* Synthtron */ = {
 			isa = PBXGroup;
 			children = (
+				FF989A3B1EE1177D00D1148B /* Extensions */,
+				FF989A371EE1164C00D1148B /* Views */,
+				FF989A381EE1165000D1148B /* ViewControllers */,
 				FF58A2821EE100F100402855 /* AppDelegate.swift */,
-				FF58A2841EE100F100402855 /* ViewController.swift */,
 				FF58A2861EE100F100402855 /* Main.storyboard */,
 				FF58A2891EE100F100402855 /* Assets.xcassets */,
 				FF58A28B1EE100F100402855 /* LaunchScreen.storyboard */,
@@ -94,6 +98,29 @@
 				FF58A2991EE100F100402855 /* Info.plist */,
 			);
 			path = SynthtronTests;
+			sourceTree = "<group>";
+		};
+		FF989A371EE1164C00D1148B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FF989A381EE1165000D1148B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FF58A2841EE100F100402855 /* MainViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FF989A3B1EE1177D00D1148B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF58A2851EE100F100402855 /* ViewController.swift in Sources */,
+				FF58A2851EE100F100402855 /* MainViewController.swift in Sources */,
 				FF58A2831EE100F100402855 /* AppDelegate.swift in Sources */,
+				FF989A3D1EE1179C00D1148B /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +442,7 @@
 				FF58A29E1EE100F100402855 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF58A29F1EE100F100402855 /* Build configuration list for PBXNativeTarget "SynthtronTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +451,7 @@
 				FF58A2A11EE100F100402855 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

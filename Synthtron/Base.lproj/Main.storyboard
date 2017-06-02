@@ -1,26 +1,67 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Synthtron" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FN9-yJ-O4S">
+                                <rect key="frame" x="48" y="175.5" width="571" height="187.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="AEn-Oj-Eeo" userLabel="White Keys">
+                                        <rect key="frame" x="0.0" y="0.0" width="571" height="187.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dp-MQ-Uk3" userLabel="Piano Key">
+                                                <rect key="frame" x="0.0" y="0.0" width="571" height="187.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="whiteKeyDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Aib-uB-rvc"/>
+                                                    <action selector="whiteKeyUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0fz-d8-9L6"/>
+                                                    <action selector="whiteKeyUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="mb4-e6-Pqp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="AEn-Oj-Eeo" firstAttribute="top" secondItem="FN9-yJ-O4S" secondAttribute="top" id="Lo1-0d-Or6"/>
+                                    <constraint firstItem="AEn-Oj-Eeo" firstAttribute="leading" secondItem="FN9-yJ-O4S" secondAttribute="leading" id="P8b-8O-xEe"/>
+                                    <constraint firstAttribute="bottom" secondItem="AEn-Oj-Eeo" secondAttribute="bottom" id="RvA-62-yJg"/>
+                                    <constraint firstAttribute="trailing" secondItem="AEn-Oj-Eeo" secondAttribute="trailing" id="ktk-9c-3Xi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FN9-yJ-O4S" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="GHc-zf-wFe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FN9-yJ-O4S" secondAttribute="bottom" constant="12" id="MbR-V9-2Yk"/>
+                            <constraint firstItem="FN9-yJ-O4S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="48" id="aG3-bJ-Ewz"/>
+                            <constraint firstAttribute="trailing" secondItem="FN9-yJ-O4S" secondAttribute="trailing" constant="48" id="mZT-t7-sCP"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="115.59220389805098" y="122.40000000000001"/>
         </scene>
     </scenes>
 </document>
