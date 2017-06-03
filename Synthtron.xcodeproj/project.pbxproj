@@ -17,6 +17,7 @@
 		FF58A28D1EE100F100402855 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58A28B1EE100F100402855 /* LaunchScreen.storyboard */; };
 		FF58A2981EE100F100402855 /* SynthtronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2971EE100F100402855 /* SynthtronTests.swift */; };
 		FF989A3D1EE1179C00D1148B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */; };
+		FFFA8AC41EE23134003E7093 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA8AC31EE23134003E7093 /* KeyboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		FF0807F91EE1217000A2F89F /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		FF0807FA1EE1217000A2F89F /* AudioKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AudioKit.framework.dSYM; sourceTree = "<group>"; };
+		FF0897BB1EE231D30020C73F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		FF58A27F1EE100F000402855 /* Synthtron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synthtron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF58A2821EE100F100402855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF58A2841EE100F100402855 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		FF58A2971EE100F100402855 /* SynthtronTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthtronTests.swift; sourceTree = "<group>"; };
 		FF58A2991EE100F100402855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		FFFA8AC31EE23134003E7093 /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 		FF58A2811EE100F000402855 /* Synthtron */ = {
 			isa = PBXGroup;
 			children = (
+				FF0897BB1EE231D30020C73F /* MyPlayground.playground */,
 				FF0807F71EE1215100A2F89F /* Libraries */,
 				FF989A3B1EE1177D00D1148B /* Extensions */,
 				FF989A371EE1164C00D1148B /* Views */,
@@ -142,6 +146,7 @@
 		FF989A371EE1164C00D1148B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FFFA8AC31EE23134003E7093 /* KeyboardView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF58A2851EE100F100402855 /* MainViewController.swift in Sources */,
+				FFFA8AC41EE23134003E7093 /* KeyboardView.swift in Sources */,
 				FF58A2831EE100F100402855 /* AppDelegate.swift in Sources */,
 				FF989A3D1EE1179C00D1148B /* UIColor+Extensions.swift in Sources */,
 			);
