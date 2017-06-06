@@ -17,6 +17,8 @@
 		FF58A28D1EE100F100402855 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58A28B1EE100F100402855 /* LaunchScreen.storyboard */; };
 		FF58A2981EE100F100402855 /* SynthtronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2971EE100F100402855 /* SynthtronTests.swift */; };
 		FF989A3D1EE1179C00D1148B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */; };
+		FFF5CCDA1EE63ED5007D39C3 /* RobotoMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFF5CCD91EE63ED5007D39C3 /* RobotoMono-Medium.ttf */; };
+		FFF5CCDC1EE64658007D39C3 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFF5CCDB1EE64658007D39C3 /* RobotoMono-Bold.ttf */; };
 		FFFA8AC41EE23134003E7093 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA8AC31EE23134003E7093 /* KeyboardView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		FF58A2971EE100F100402855 /* SynthtronTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthtronTests.swift; sourceTree = "<group>"; };
 		FF58A2991EE100F100402855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		FFF5CCD91EE63ED5007D39C3 /* RobotoMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Medium.ttf"; sourceTree = "<group>"; };
+		FFF5CCDB1EE64658007D39C3 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
 		FFFA8AC31EE23134003E7093 /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +132,8 @@
 				FF58A2821EE100F100402855 /* AppDelegate.swift */,
 				FF58A2861EE100F100402855 /* Main.storyboard */,
 				FF58A2891EE100F100402855 /* Assets.xcassets */,
+				FFF5CCD91EE63ED5007D39C3 /* RobotoMono-Medium.ttf */,
+				FFF5CCDB1EE64658007D39C3 /* RobotoMono-Bold.ttf */,
 				FF58A28B1EE100F100402855 /* LaunchScreen.storyboard */,
 				FF58A28E1EE100F100402855 /* Info.plist */,
 			);
@@ -148,7 +154,7 @@
 			children = (
 				FFFA8AC31EE23134003E7093 /* KeyboardView.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FF989A381EE1165000D1148B /* ViewControllers */ = {
@@ -156,7 +162,7 @@
 			children = (
 				FF58A2841EE100F100402855 /* MainViewController.swift */,
 			);
-			name = ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		FF989A3B1EE1177D00D1148B /* Extensions */ = {
@@ -164,7 +170,7 @@
 			children = (
 				FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +262,9 @@
 				FF0807FC1EE1217000A2F89F /* AudioKit.framework.dSYM in Resources */,
 				FF58A28D1EE100F100402855 /* LaunchScreen.storyboard in Resources */,
 				FF58A28A1EE100F100402855 /* Assets.xcassets in Resources */,
+				FFF5CCDC1EE64658007D39C3 /* RobotoMono-Bold.ttf in Resources */,
 				FF58A2881EE100F100402855 /* Main.storyboard in Resources */,
+				FFF5CCDA1EE63ED5007D39C3 /* RobotoMono-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,11 +33,11 @@ class KeyboardView: UIView {
     @IBInspectable var blackKeyColor: UIColor = UIColor.black
     @IBInspectable var blackKeyDownColor: UIColor = UIColor.red
     
+    @IBInspectable var keyCount: Int = 29
     @IBInspectable var keySpacing: CGFloat = 1.0
     @IBInspectable var blackKeyHeightPercentage: CGFloat = 3.0/5.0
     @IBInspectable var blackKeyCornerRadius: CGFloat = 2.0
     
-    private let keyCount = 29
     private let whiteBlackSequence: [PianoKeyType] = [.white, .black, .white, .black, .white, .white, .black, .white, .black, .white, .black, .white]
     fileprivate var keys: [PianoKey] = []
     private var numWhiteKeys = 0
@@ -69,42 +69,42 @@ class KeyboardView: UIView {
         let whiteRect = CGRect(x: 0, y: 0, width: wkWidth, height: wkHeight)
         let blackRect = CGRect(x: -bkWidth / 2.0, y: 0, width: bkWidth, height: bkHeight)
         
-        // layout all key positions
-        var curX: CGFloat = 0
-        
-        for i in keys.indices {
-            var toMove: CGFloat
-            switch keys[i].type {
-            case .white:
-                keys[i].rect = whiteRect
-                toMove = wkWidth + keySpacing
-            case .black:
-                keys[i].rect = blackRect
-                toMove = 0.0 // black keys are in-between
-            }
-            keys[i].rect.origin.x += curX
-            curX += toMove
-        }
-        
-        func drawKeys(type: PianoKeyType) {
-            for var key in keys {
-                switch type {
-                case .white:
-                    key.isDown ? whiteKeyDownColor.setFill() : whiteKeyColor.setFill()
-                case .black:
-                    key.isDown ? blackKeyDownColor.setFill() : blackKeyColor.setFill()
-                }
-                if type == key.type {
-                    UIRectFill(key.rect)
-                }
-            }
-        }
-        
-        // layout the white keys
-        drawKeys(type: .white)
-        
-        // layout the black keys
-        drawKeys(type: .black)
+//        // layout all key positions
+//        var curX: CGFloat = 0
+//        
+//        for i in keys.indices {
+//            var toMove: CGFloat
+//            switch keys[i].type {
+//            case .white:
+//                keys[i].rect = whiteRect
+//                toMove = wkWidth + keySpacing
+//            case .black:
+//                keys[i].rect = blackRect
+//                toMove = 0.0 // black keys are in-between
+//            }
+//            keys[i].rect.origin.x += curX
+//            curX += toMove
+//        }
+//        
+//        func drawKeys(type: PianoKeyType) {
+//            for var key in keys {
+//                switch type {
+//                case .white:
+//                    key.isDown ? whiteKeyDownColor.setFill() : whiteKeyColor.setFill()
+//                case .black:
+//                    key.isDown ? blackKeyDownColor.setFill() : blackKeyColor.setFill()
+//                }
+//                if type == key.type {
+//                    UIRectFill(key.rect)
+//                }
+//            }
+//        }
+//        
+//        // layout the white keys
+//        drawKeys(type: .white)
+//        
+//        // layout the black keys
+//        drawKeys(type: .black)
     }
     
     fileprivate func keyAtPoint(_ point: CGPoint) -> PianoKey? {
