@@ -17,6 +17,7 @@
 		FF58A28D1EE100F100402855 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58A28B1EE100F100402855 /* LaunchScreen.storyboard */; };
 		FF58A2981EE100F100402855 /* SynthtronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2971EE100F100402855 /* SynthtronTests.swift */; };
 		FF989A3D1EE1179C00D1148B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */; };
+		FFD7D1811EE6FE7100119948 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD29831EE6FC9F000C2909 /* SliderView.swift */; };
 		FFF5CCDA1EE63ED5007D39C3 /* RobotoMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFF5CCD91EE63ED5007D39C3 /* RobotoMono-Medium.ttf */; };
 		FFF5CCDC1EE64658007D39C3 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFF5CCDB1EE64658007D39C3 /* RobotoMono-Bold.ttf */; };
 		FFFA8AC41EE23134003E7093 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFA8AC31EE23134003E7093 /* KeyboardView.swift */; };
@@ -61,6 +62,8 @@
 		FF58A2971EE100F100402855 /* SynthtronTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthtronTests.swift; sourceTree = "<group>"; };
 		FF58A2991EE100F100402855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		FFCD29831EE6FC9F000C2909 /* SliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		FFD7D1821EE6FFE300119948 /* Slider.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Slider.playground; sourceTree = "<group>"; };
 		FFF5CCD91EE63ED5007D39C3 /* RobotoMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Medium.ttf"; sourceTree = "<group>"; };
 		FFF5CCDB1EE64658007D39C3 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
 		FFFA8AC31EE23134003E7093 /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 		FF58A2811EE100F000402855 /* Synthtron */ = {
 			isa = PBXGroup;
 			children = (
+				FFD7D1821EE6FFE300119948 /* Slider.playground */,
 				FF0897BB1EE231D30020C73F /* MyPlayground.playground */,
 				FF0807F71EE1215100A2F89F /* Libraries */,
 				FF989A3B1EE1177D00D1148B /* Extensions */,
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				FFFA8AC31EE23134003E7093 /* KeyboardView.swift */,
+				FFCD29831EE6FC9F000C2909 /* SliderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				FFFA8AC41EE23134003E7093 /* KeyboardView.swift in Sources */,
 				FF58A2831EE100F100402855 /* AppDelegate.swift in Sources */,
 				FF989A3D1EE1179C00D1148B /* UIColor+Extensions.swift in Sources */,
+				FFD7D1811EE6FE7100119948 /* SliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

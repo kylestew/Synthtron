@@ -69,7 +69,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf7-jS-M86">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf7-jS-M86" customClass="SliderView" customModule="Synthtron" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="82" width="42" height="80"/>
                                         <color key="backgroundColor" red="0.98494917150000005" green="0.0" blue="0.0092208533660000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -86,7 +86,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3n3-DI-Hme">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3n3-DI-Hme" customClass="SliderView" customModule="Synthtron" customModuleProvider="target">
                                         <rect key="frame" x="62" y="82" width="42" height="80"/>
                                         <color key="backgroundColor" red="0.98494917150000005" green="0.0" blue="0.0092208533660000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -103,7 +103,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQf-c4-HJF">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQf-c4-HJF" customClass="SliderView" customModule="Synthtron" customModuleProvider="target">
                                         <rect key="frame" x="124" y="82" width="42" height="80"/>
                                         <color key="backgroundColor" red="0.98494917150000005" green="0.0" blue="0.0092208533660000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -120,7 +120,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrT-Lz-3KF">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrT-Lz-3KF" customClass="SliderView" customModule="Synthtron" customModuleProvider="target">
                                         <rect key="frame" x="186" y="82" width="42" height="80"/>
                                         <color key="backgroundColor" red="0.98494917150000005" green="0.0" blue="0.0092208533660000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>

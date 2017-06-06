@@ -1,4 +1,3 @@
-//: Playground - noun: a place where people can play
 import UIKit
 import PlaygroundSupport
 
@@ -35,15 +34,16 @@ class KeyboardView: UIView {
     @IBInspectable var blackKeyColor: UIColor = UIColor.black
     @IBInspectable var blackKeyDownColor: UIColor = UIColor.red
     
-    @IBInspectable var keySpacing: CGFloat = 1.0
-    @IBInspectable var blackKeyHeightPercentage: CGFloat = 3.0/5.0
+    @IBInspectable var keyCount: Int = 20
+    @IBInspectable var keySpacing: CGFloat = 4.0
+    @IBInspectable var blackKeyWidthPercentage: CGFloat = 0.8
+    @IBInspectable var blackKeyHeightPercentage: CGFloat = 0.5
     @IBInspectable var blackKeyCornerRadius: CGFloat = 2.0
     
-    private let keyCount = 29
     private let whiteBlackSequence: [PianoKeyType] = [.white, .black, .white, .black, .white, .white, .black, .white, .black, .white, .black, .white]
-    fileprivate var keys: [PianoKey] = []
+    private var keys: [PianoKey] = []
     private var numWhiteKeys = 0
-   
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         sequenceKeys()
@@ -63,9 +63,10 @@ class KeyboardView: UIView {
     
     override func draw(_ rect: CGRect) {
         let keySpacingTotal = CGFloat(numWhiteKeys - 1) * keySpacing
-        let wkWidth = round((bounds.width - keySpacingTotal) / CGFloat(numWhiteKeys))
+        // due to accumulative rouning errors, don't snap key widths to whole pixels
+        let wkWidth = (bounds.width - keySpacingTotal) / CGFloat(numWhiteKeys)
         let wkHeight = bounds.height
-        let bkWidth = CGFloat(wkWidth * 0.5)
+        let bkWidth = CGFloat(wkWidth * blackKeyWidthPercentage)
         let bkHeight = round(bounds.height * blackKeyHeightPercentage)
         
         let whiteRect = CGRect(x: 0, y: 0, width: wkWidth, height: wkHeight)
@@ -73,7 +74,6 @@ class KeyboardView: UIView {
         
         // layout all key positions
         var curX: CGFloat = 0
-        
         for i in keys.indices {
             var toMove: CGFloat
             switch keys[i].type {
@@ -101,7 +101,7 @@ class KeyboardView: UIView {
                 }
             }
         }
-    
+        
         // layout the white keys
         drawKeys(type: .white)
         
@@ -196,8 +196,7 @@ extension KeyboardView {
     }
 }
 
-
-let view = KeyboardView(frame: CGRect(x: 0, y:0, width: 640, height: 300))
+let view = KeyboardView(frame: CGRect(x: 0, y:0, width: 648, height: 164))
 view
 
 PlaygroundPage.current.liveView = view
