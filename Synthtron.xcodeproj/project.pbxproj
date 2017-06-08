@@ -12,6 +12,7 @@
 		FF0808011EE121E200A2F89F /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FF0807F91EE1217000A2F89F /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FF5711751EE9FFFD0038E9D5 /* Rescale.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5711741EE9FFFD0038E9D5 /* Rescale.swift */; };
 		FF5711771EEA007B0038E9D5 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5711761EEA007B0038E9D5 /* KnobView.swift */; };
+		FF57117A1EEA0C940038E9D5 /* MainSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5711791EEA0C940038E9D5 /* MainSynth.swift */; };
 		FF58A2831EE100F100402855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2821EE100F100402855 /* AppDelegate.swift */; };
 		FF58A2851EE100F100402855 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2841EE100F100402855 /* MainViewController.swift */; };
 		FF58A2881EE100F100402855 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58A2861EE100F100402855 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		FF0897BB1EE231D30020C73F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		FF5711741EE9FFFD0038E9D5 /* Rescale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rescale.swift; sourceTree = "<group>"; };
 		FF5711761EEA007B0038E9D5 /* KnobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
+		FF5711791EEA0C940038E9D5 /* MainSynth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSynth.swift; sourceTree = "<group>"; };
 		FF58A27F1EE100F000402855 /* Synthtron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synthtron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF58A2821EE100F100402855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF58A2841EE100F100402855 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 			path = AudioKit;
 			sourceTree = "<group>";
 		};
+		FF5711781EEA0C6F0038E9D5 /* SynthModules */ = {
+			isa = PBXGroup;
+			children = (
+				FF5711791EEA0C940038E9D5 /* MainSynth.swift */,
+			);
+			path = SynthModules;
+			sourceTree = "<group>";
+		};
 		FF58A2761EE100F000402855 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +145,7 @@
 				FF0897BB1EE231D30020C73F /* MyPlayground.playground */,
 				FF0807F71EE1215100A2F89F /* Libraries */,
 				FF989A3B1EE1177D00D1148B /* Extensions */,
+				FF5711781EEA0C6F0038E9D5 /* SynthModules */,
 				FF989A371EE1164C00D1148B /* Views */,
 				FF989A381EE1165000D1148B /* ViewControllers */,
 				FF58A2821EE100F100402855 /* AppDelegate.swift */,
@@ -300,6 +311,7 @@
 				FF58A2831EE100F100402855 /* AppDelegate.swift in Sources */,
 				FF989A3D1EE1179C00D1148B /* UIColor+Extensions.swift in Sources */,
 				FFE817AA1EE9F76300D9B42A /* CGPoint+Extensions.swift in Sources */,
+				FF57117A1EEA0C940038E9D5 /* MainSynth.swift in Sources */,
 				FF5711771EEA007B0038E9D5 /* KnobView.swift in Sources */,
 				FFD7D1811EE6FE7100119948 /* SliderView.swift in Sources */,
 			);

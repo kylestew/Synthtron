@@ -24,11 +24,11 @@ class SliderView: UIControl {
     var maxValue: Double = 1.0
     
     // domain: [minValue, maxValue]
-    var currentValue = 0.5 {
+    var value = 0.5 {
         didSet {
             // bound by min/max
-            currentValue = min(max(currentValue, minValue), maxValue)
-            delegate?.sliderValueDidChange(currentValue, tag: self.tag)
+            value = min(max(value, minValue), maxValue)
+            delegate?.sliderValueDidChange(value, tag: self.tag)
             updateView()
         }
     }
@@ -40,10 +40,10 @@ class SliderView: UIControl {
     // domain: unitized [0, 1]
     private var sliderValue:CGFloat {
         get {
-            return CGFloat(Rescale(from: (minValue, maxValue), to: (0, 1)).rescale(currentValue))
+            return CGFloat(Rescale(from: (minValue, maxValue), to: (0, 1)).rescale(value))
         }
         set {
-            currentValue = Rescale(from: (0, 1), to: (minValue, maxValue)).rescale(Double(newValue))
+            value = Rescale(from: (0, 1), to: (minValue, maxValue)).rescale(Double(newValue))
         }
     }
     
