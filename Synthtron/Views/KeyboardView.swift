@@ -40,6 +40,7 @@ class KeyboardView: UIView {
     @IBInspectable var blackKeyCornerRadius: CGFloat = 2.0
     
     private let whiteBlackSequence: [PianoKeyType] = [.white, .black, .white, .black, .white, .white, .black, .white, .black, .white, .black, .white]
+    private let blackOffsetRuns = [ -1, 1, -1, 0, 1 ] // black keys have a pattern of offsets for visual appearance
     private var keys: [PianoKey] = []
     private var numWhiteKeys = 0
     
@@ -69,10 +70,12 @@ class KeyboardView: UIView {
         let bkHeight = round(bounds.height * blackKeyHeightPercentage)
         
         let whiteRect = CGRect(x: 0, y: 0, width: wkWidth, height: wkHeight)
-        let blackRect = CGRect(x: -bkWidth / 2.0, y: 0, width: bkWidth, height: bkHeight)
+        let blackRect = CGRect(x: round(-(bkWidth + keySpacing) / 2.0), y: -blackKeyCornerRadius, width: bkWidth, height: bkHeight)
+        let blackRectOffset: CGFloat = round(bkWidth * 0.08)
         
         // layout all key positions
         var curX: CGFloat = 0
+        var blackKeyIdx = 0
         for i in keys.indices {
             var toMove: CGFloat
             switch keys[i].type {
@@ -80,23 +83,38 @@ class KeyboardView: UIView {
                 keys[i].rect = whiteRect
                 toMove = wkWidth + keySpacing
             case .black:
-                keys[i].rect = blackRect
+                // determine visual offset for black key placement
+                if blackKeyIdx >= blackOffsetRuns.count {
+                    blackKeyIdx = 0
+                }
+                let offset = CGFloat(blackOffsetRuns[blackKeyIdx]) * blackRectOffset
+                var rect = blackRect
+                
+                // place black key
+                rect.origin.x += offset
+                keys[i].rect = rect
+                
                 toMove = 0.0 // black keys are in-between
+                blackKeyIdx += 1
             }
             keys[i].rect.origin.x += curX
             curX += toMove
         }
         
         func drawKeys(type: PianoKeyType) {
-            for var key in keys {
+            for key in keys {
                 switch type {
                 case .white:
-                    key.isDown ? whiteKeyDownColor.setFill() : whiteKeyColor.setFill()
+                    if type == key.type {
+                        key.isDown ? whiteKeyDownColor.setFill() : whiteKeyColor.setFill()
+                        UIRectFill(key.rect)
+                    }
                 case .black:
-                    key.isDown ? blackKeyDownColor.setFill() : blackKeyColor.setFill()
-                }
-                if type == key.type {
-                    UIRectFill(key.rect)
+                    if type == key.type {
+                        key.isDown ? blackKeyDownColor.setFill() : blackKeyColor.setFill()
+                        let keyPath = UIBezierPath(roundedRect: key.rect, cornerRadius: blackKeyCornerRadius)
+                        keyPath.fill()
+                    }
                 }
             }
         }
@@ -116,11 +134,21 @@ class KeyboardView: UIView {
             // if more than one key at point, pick first black key
             return touched.filter { $0.type == .black }.first
         }
-        return nil
+    }
+    
+    func enforceMonophonic() {
+        // HACK: this will retrigger envelope... probably not what we want here
+        for (index, key) in keys.enumerated() {
+            if key.isDown == true {
+                keyUp(forIndex: index)
+            }
+        }
     }
     
     func keyDown(forIndex index: Int) {
         if index < keys.count && keys[index].isDown == false {
+            enforceMonophonic()
+            
             keys[index].isDown = true
             
             print("Key down \(index)")
