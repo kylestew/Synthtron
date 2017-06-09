@@ -99,9 +99,9 @@ class MainSynth {
     var currentMIDINote: MIDINoteNumber = 0
     
     // MARK: - Play Some Notes
-    func noteOn(_ note: MIDINoteNumber) {
+    func noteOn(_ note: MIDINoteNumber, velocity: Int) {
         currentMIDINote = note
-        dualVCO.play(noteNumber: note, velocity: 120)
+        dualVCO.play(noteNumber: note, velocity: MIDIVelocity(velocity))
     }
     
     func noteOff(_ note: MIDINoteNumber) {

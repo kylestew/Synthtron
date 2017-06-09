@@ -24,6 +24,8 @@
 		FF58A28D1EE100F100402855 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58A28B1EE100F100402855 /* LaunchScreen.storyboard */; };
 		FF58A2981EE100F100402855 /* SynthtronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2971EE100F100402855 /* SynthtronTests.swift */; };
 		FF989A3D1EE1179C00D1148B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */; };
+		FF9DEA4E1EEB4FF000384E99 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9DEA4D1EEB4FF000384E99 /* CGRect+Extensions.swift */; };
+		FF9DEA501EEB52ED00384E99 /* DialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9DEA4F1EEB52ED00384E99 /* DialView.swift */; };
 		FFD7D1811EE6FE7100119948 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD29831EE6FC9F000C2909 /* SliderView.swift */; };
 		FFE817AA1EE9F76300D9B42A /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE817A91EE9F76300D9B42A /* CGPoint+Extensions.swift */; };
 		FFF5CCDA1EE63ED5007D39C3 /* RobotoMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFF5CCD91EE63ED5007D39C3 /* RobotoMono-Medium.ttf */; };
@@ -81,6 +83,8 @@
 		FF58A2971EE100F100402855 /* SynthtronTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthtronTests.swift; sourceTree = "<group>"; };
 		FF58A2991EE100F100402855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		FF9DEA4D1EEB4FF000384E99 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
+		FF9DEA4F1EEB52ED00384E99 /* DialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialView.swift; sourceTree = "<group>"; };
 		FFCD29831EE6FC9F000C2909 /* SliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		FFE817A91EE9F76300D9B42A /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 		FFF5CCD91EE63ED5007D39C3 /* RobotoMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Medium.ttf"; sourceTree = "<group>"; };
@@ -127,6 +131,14 @@
 				C98AB6C7FE55A8892E1FCDE7 /* Pods-SynthtronTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF05FE031EEB53CA003B7D9B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FF9DEA4F1EEB52ED00384E99 /* DialView.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 		FF0807F71EE1215100A2F89F /* Libraries */ = {
@@ -209,6 +221,7 @@
 		FF989A371EE1164C00D1148B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF05FE031EEB53CA003B7D9B /* Components */,
 				FFFA8AC31EE23134003E7093 /* KeyboardView.swift */,
 				FFCD29831EE6FC9F000C2909 /* SliderView.swift */,
 				FF5711761EEA007B0038E9D5 /* KnobView.swift */,
@@ -230,6 +243,7 @@
 				FF5711741EE9FFFD0038E9D5 /* Rescale.swift */,
 				FF989A3C1EE1179C00D1148B /* UIColor+Extensions.swift */,
 				FFE817A91EE9F76300D9B42A /* CGPoint+Extensions.swift */,
+				FF9DEA4D1EEB4FF000384E99 /* CGRect+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,7 +456,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF9DEA501EEB52ED00384E99 /* DialView.swift in Sources */,
 				FF58A2851EE100F100402855 /* MainViewController.swift in Sources */,
+				FF9DEA4E1EEB4FF000384E99 /* CGRect+Extensions.swift in Sources */,
 				FF57117E1EEA15850038E9D5 /* Waveform.swift in Sources */,
 				FFFA8AC41EE23134003E7093 /* KeyboardView.swift in Sources */,
 				FF5711751EE9FFFD0038E9D5 /* Rescale.swift in Sources */,

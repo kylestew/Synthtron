@@ -4,16 +4,8 @@ import RxSwift
 @IBDesignable
 class SliderView: UIControl {
     
-    //************************************************************
-    // MARK: IBInspectable
-    //************************************************************
-    
     @IBInspectable var knobRadius: CGFloat = 9.0
     @IBInspectable var trackWidth: CGFloat = 6.0
-    
-    //************************************************************
-    // MARK: RX Observable
-    //************************************************************
     
     var sliderValue = Variable(0.0)
     

@@ -18,7 +18,7 @@ private struct PianoKey {
 }
 
 protocol KeyboardViewNoteDelegate {
-    func midiNoteDown(midiNoteNumber: Int)
+    func midiNoteDown(midiNoteNumber: Int, velocity: Int)
     func midiNoteUp(midiNoteNumber: Int)
 }
 
@@ -141,6 +141,15 @@ class KeyboardView: UIView {
         }
     }
     
+    fileprivate func velocityForPoint(_ point: CGPoint) -> Int {
+        // [0, height] --> [0, 120]
+        print(point)
+        let vel = Int((point.y / bounds.height) * 120)
+        print(vel)
+//        Rescale(from: (0, bounds.height), to: (0, 120))
+        return vel
+    }
+    
     func enforceMonophonic() {
         // HACK: this will retrigger envelope... probably not what we want here
         for (index, key) in keys.enumerated() {
@@ -150,16 +159,22 @@ class KeyboardView: UIView {
         }
     }
     
+    private var lastVelocity = 0
     func keyDown(forIndex index: Int) {
+        keyDown(forIndex: index, withVelocity: lastVelocity)
+    }
+    
+    func keyDown(forIndex index: Int, withVelocity velocity: Int) {
         if index < keys.count && keys[index].isDown == false {
             enforceMonophonic()
             
             keys[index].isDown = true
+            lastVelocity = velocity
             
             print("Key down \(index)")
             
             if let noteDelgate = delegate {
-                noteDelgate.midiNoteDown(midiNoteNumber: baseMIDINoteNumber + index)
+                noteDelgate.midiNoteDown(midiNoteNumber: baseMIDINoteNumber + index, velocity: velocity)
             }
             
             self.setNeedsDisplay()
@@ -190,8 +205,9 @@ extension KeyboardView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             // find key underneath touch
-            if let key = keyAtPoint(touch.location(in: self)) {
-                keyDown(forIndex: key.index)
+            let point = touch.location(in: self)
+            if let key = keyAtPoint(point) {
+                keyDown(forIndex: key.index, withVelocity: velocityForPoint(point))
             }
         }
         super.touchesBegan(touches, with: event)

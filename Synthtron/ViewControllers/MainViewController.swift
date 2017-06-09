@@ -1,7 +1,6 @@
 import UIKit
 import AudioKit
 import RxSwift
-import RxCocoa
 
 class MainViewController: UIViewController {
     
@@ -68,8 +67,8 @@ class MainViewController: UIViewController {
 
 extension MainViewController: KeyboardViewNoteDelegate {
     
-    func midiNoteDown(midiNoteNumber: Int) {
-        synth.noteOn(MIDINoteNumber(midiNoteNumber))
+    func midiNoteDown(midiNoteNumber: Int, velocity: Int) {
+        synth.noteOn(MIDINoteNumber(midiNoteNumber), velocity: velocity)
     }
     
     func midiNoteUp(midiNoteNumber: Int) {
@@ -78,8 +77,3 @@ extension MainViewController: KeyboardViewNoteDelegate {
     
 }
 
-//************************************************************
-// MARK: - Knob Delegate
-//************************************************************
-
-// TODO:
