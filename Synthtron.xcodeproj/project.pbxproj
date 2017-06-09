@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		856DDB021A759F16F84DFE56 /* Pods_Synthtron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A88DCC109AA17A04329A1A /* Pods_Synthtron.framework */; };
+		B9AEE747AC923E0D4E66A733 /* Pods_SynthtronTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656ED25F784CC4B6B390A00E /* Pods_SynthtronTests.framework */; };
 		FF0807FC1EE1217000A2F89F /* AudioKit.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = FF0807FA1EE1217000A2F89F /* AudioKit.framework.dSYM */; };
 		FF0808001EE121E200A2F89F /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0807F91EE1217000A2F89F /* AudioKit.framework */; };
 		FF0808011EE121E200A2F89F /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FF0807F91EE1217000A2F89F /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FF5711751EE9FFFD0038E9D5 /* Rescale.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5711741EE9FFFD0038E9D5 /* Rescale.swift */; };
 		FF5711771EEA007B0038E9D5 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5711761EEA007B0038E9D5 /* KnobView.swift */; };
 		FF57117A1EEA0C940038E9D5 /* MainSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5711791EEA0C940038E9D5 /* MainSynth.swift */; };
+		FF57117C1EEA15240038E9D5 /* DualVCO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF57117B1EEA15240038E9D5 /* DualVCO.swift */; };
+		FF57117E1EEA15850038E9D5 /* Waveform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF57117D1EEA15850038E9D5 /* Waveform.swift */; };
 		FF58A2831EE100F100402855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2821EE100F100402855 /* AppDelegate.swift */; };
 		FF58A2851EE100F100402855 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58A2841EE100F100402855 /* MainViewController.swift */; };
 		FF58A2881EE100F100402855 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF58A2861EE100F100402855 /* Main.storyboard */; };
@@ -52,12 +56,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4966A18C593B65961C0ADEE4 /* Pods-Synthtron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synthtron.release.xcconfig"; path = "Pods/Target Support Files/Pods-Synthtron/Pods-Synthtron.release.xcconfig"; sourceTree = "<group>"; };
+		656ED25F784CC4B6B390A00E /* Pods_SynthtronTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SynthtronTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66A88DCC109AA17A04329A1A /* Pods_Synthtron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Synthtron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95246588C77A230712F4032E /* Pods-SynthtronTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynthtronTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SynthtronTests/Pods-SynthtronTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C98AB6C7FE55A8892E1FCDE7 /* Pods-SynthtronTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynthtronTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SynthtronTests/Pods-SynthtronTests.release.xcconfig"; sourceTree = "<group>"; };
+		F9FE8E01DD36EE6F92A2277A /* Pods-Synthtron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synthtron.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Synthtron/Pods-Synthtron.debug.xcconfig"; sourceTree = "<group>"; };
 		FF0807F91EE1217000A2F89F /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		FF0807FA1EE1217000A2F89F /* AudioKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AudioKit.framework.dSYM; sourceTree = "<group>"; };
 		FF0897BB1EE231D30020C73F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		FF5711741EE9FFFD0038E9D5 /* Rescale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rescale.swift; sourceTree = "<group>"; };
 		FF5711761EEA007B0038E9D5 /* KnobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
 		FF5711791EEA0C940038E9D5 /* MainSynth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSynth.swift; sourceTree = "<group>"; };
+		FF57117B1EEA15240038E9D5 /* DualVCO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DualVCO.swift; sourceTree = "<group>"; };
+		FF57117D1EEA15850038E9D5 /* Waveform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waveform.swift; sourceTree = "<group>"; };
 		FF58A27F1EE100F000402855 /* Synthtron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synthtron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF58A2821EE100F100402855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF58A2841EE100F100402855 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0808001EE121E200A2F89F /* AudioKit.framework in Frameworks */,
+				856DDB021A759F16F84DFE56 /* Pods_Synthtron.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,12 +102,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9AEE747AC923E0D4E66A733 /* Pods_SynthtronTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B293B4A705B87286C3DC8A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66A88DCC109AA17A04329A1A /* Pods_Synthtron.framework */,
+				656ED25F784CC4B6B390A00E /* Pods_SynthtronTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E16EA3EB0237B6700E9CFD95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9FE8E01DD36EE6F92A2277A /* Pods-Synthtron.debug.xcconfig */,
+				4966A18C593B65961C0ADEE4 /* Pods-Synthtron.release.xcconfig */,
+				95246588C77A230712F4032E /* Pods-SynthtronTests.debug.xcconfig */,
+				C98AB6C7FE55A8892E1FCDE7 /* Pods-SynthtronTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FF0807F71EE1215100A2F89F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				FF5711791EEA0C940038E9D5 /* MainSynth.swift */,
+				FF57117B1EEA15240038E9D5 /* DualVCO.swift */,
+				FF57117D1EEA15850038E9D5 /* Waveform.swift */,
 			);
 			path = SynthModules;
 			sourceTree = "<group>";
@@ -127,6 +163,8 @@
 				FF58A2811EE100F000402855 /* Synthtron */,
 				FF58A2961EE100F100402855 /* SynthtronTests */,
 				FF58A2801EE100F000402855 /* Products */,
+				E16EA3EB0237B6700E9CFD95 /* Pods */,
+				7B293B4A705B87286C3DC8A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,10 +241,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF58A29C1EE100F100402855 /* Build configuration list for PBXNativeTarget "Synthtron" */;
 			buildPhases = (
+				BDA549E9D00891359352E14E /* [CP] Check Pods Manifest.lock */,
 				FF58A27B1EE100F000402855 /* Sources */,
 				FF58A27C1EE100F000402855 /* Frameworks */,
 				FF58A27D1EE100F000402855 /* Resources */,
 				FF0808021EE121E200A2F89F /* Embed Frameworks */,
+				688441F8F0621BA438987B9E /* [CP] Embed Pods Frameworks */,
+				3C0FACD2FEE7DE875601E2F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,9 +262,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF58A29F1EE100F100402855 /* Build configuration list for PBXNativeTarget "SynthtronTests" */;
 			buildPhases = (
+				98CD9F86F7F919B4BC1AA4C2 /* [CP] Check Pods Manifest.lock */,
 				FF58A28F1EE100F100402855 /* Sources */,
 				FF58A2901EE100F100402855 /* Frameworks */,
 				FF58A2911EE100F100402855 /* Resources */,
+				D25E4C6DD0576C6168A3D29E /* [CP] Embed Pods Frameworks */,
+				6DA2E26A0F519A76D5281BEE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,12 +344,106 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3C0FACD2FEE7DE875601E2F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Synthtron/Pods-Synthtron-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		688441F8F0621BA438987B9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Synthtron/Pods-Synthtron-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DA2E26A0F519A76D5281BEE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SynthtronTests/Pods-SynthtronTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98CD9F86F7F919B4BC1AA4C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BDA549E9D00891359352E14E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D25E4C6DD0576C6168A3D29E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SynthtronTests/Pods-SynthtronTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF58A27B1EE100F000402855 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FF58A2851EE100F100402855 /* MainViewController.swift in Sources */,
+				FF57117E1EEA15850038E9D5 /* Waveform.swift in Sources */,
 				FFFA8AC41EE23134003E7093 /* KeyboardView.swift in Sources */,
 				FF5711751EE9FFFD0038E9D5 /* Rescale.swift in Sources */,
 				FF58A2831EE100F100402855 /* AppDelegate.swift in Sources */,
@@ -313,6 +451,7 @@
 				FFE817AA1EE9F76300D9B42A /* CGPoint+Extensions.swift in Sources */,
 				FF57117A1EEA0C940038E9D5 /* MainSynth.swift in Sources */,
 				FF5711771EEA007B0038E9D5 /* KnobView.swift in Sources */,
+				FF57117C1EEA15240038E9D5 /* DualVCO.swift in Sources */,
 				FFD7D1811EE6FE7100119948 /* SliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +591,7 @@
 		};
 		FF58A29D1EE100F100402855 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9FE8E01DD36EE6F92A2277A /* Pods-Synthtron.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3D926V5A83;
@@ -469,6 +609,7 @@
 		};
 		FF58A29E1EE100F100402855 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4966A18C593B65961C0ADEE4 /* Pods-Synthtron.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3D926V5A83;
@@ -486,6 +627,7 @@
 		};
 		FF58A2A01EE100F100402855 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95246588C77A230712F4032E /* Pods-SynthtronTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -501,6 +643,7 @@
 		};
 		FF58A2A11EE100F100402855 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C98AB6C7FE55A8892E1FCDE7 /* Pods-SynthtronTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

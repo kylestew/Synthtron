@@ -1,0 +1,6 @@
+framework module Pods_Synthtron {
+  umbrella header "Pods-Synthtron-umbrella.h"
+
+  export *
+  module * { export * }
+}

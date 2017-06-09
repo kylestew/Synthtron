@@ -1,7 +1,9 @@
 import UIKit
 import AudioKit
+import RxSwift
+import RxCocoa
 
-class MainViewController: UIViewController, KeyboardViewNoteDelegate {
+class MainViewController: UIViewController {
     
     @IBOutlet weak var keyboardView: KeyboardView!
     
@@ -10,8 +12,7 @@ class MainViewController: UIViewController, KeyboardViewNoteDelegate {
     @IBOutlet weak var envSustainSlider: SliderView!
     @IBOutlet weak var envReleaseSlider: SliderView!
     
-    var currentMIDINote: MIDINoteNumber = 0
-    
+    let disposeBag = DisposeBag()
     let synth = MainSynth.sharedInstance
 
     override func viewDidLoad() {
@@ -28,76 +29,53 @@ class MainViewController: UIViewController, KeyboardViewNoteDelegate {
     
     func setDefaultValues() {
         // envelope
-        envAttackSlider.maxValue = synth.attackMax
-        envAttackSlider.value = synth.attack
-        envAttackSlider.delegate = self
+        // each get initial value set from synth and binds next values back to the synth
         
-        envDecaySlider.maxValue = synth.decayMax
-        envDecaySlider.value = synth.decay
-        envDecaySlider.delegate = self
+        envAttackSlider.sliderValue.value = Rescale(from: (0, synth.attackMax), to: (0, 1)).rescale(synth.attack)
+        envAttackSlider.sliderValue.asObservable().map { value in
+            return Rescale(from: (0, 1), to: (0, MainSynth.sharedInstance.attackMax)).rescale(value)
+            }.subscribe(onNext: {
+                MainSynth.sharedInstance.attack = $0
+            }).addDisposableTo(disposeBag)
         
-        envSustainSlider.maxValue = synth.sustainMax
-        envSustainSlider.value = synth.sustain
-        envSustainSlider.delegate = self
+        envDecaySlider.sliderValue.value = Rescale(from: (0, synth.decayMax), to: (0, 1)).rescale(synth.decay)
+        envDecaySlider.sliderValue.asObservable().map { value in
+            return Rescale(from: (0, 1), to: (0, MainSynth.sharedInstance.decayMax)).rescale(value)
+            }.subscribe(onNext: {
+                MainSynth.sharedInstance.decay = $0
+            }).addDisposableTo(disposeBag)
         
-        envReleaseSlider.maxValue = synth.releaseMax
-        envReleaseSlider.value = synth.release
-        envReleaseSlider.delegate = self
-    }
-    
-    //************************************************************
-    // MARK: - Keyboard Delegate
-    //************************************************************
-
-    func midiNoteDown(midiNoteNumber: Int) {
-        noteOn(MIDINoteNumber(midiNoteNumber))
-    }
-    
-    func midiNoteUp(midiNoteNumber: Int) {
-        noteOff(MIDINoteNumber(midiNoteNumber))
-    }
-    
-    // MARK: - Play Some Notes
-    func noteOn(_ note: MIDINoteNumber) {
-//        currentMIDINote = note
-//        // start from the correct note if amplitude is zero
-//        if oscillator.amplitude == 0 {
-//            oscillator.rampTime = 0
-//        }
-//        oscillator.frequency = note.midiNoteToFrequency()
-//
-//        // Still use rampTime for volume
-//        oscillator.amplitude = 0.2
-//        oscillator.play()
-    }
-    
-    func noteOff(_ note: MIDINoteNumber) {
-//        if currentMIDINote == note {
-//            oscillator.amplitude = 0
-//        }
+        envSustainSlider.sliderValue.value = Rescale(from: (0, synth.sustainMax), to: (0, 1)).rescale(synth.sustain)
+        envSustainSlider.sliderValue.asObservable().map { value in
+            return Rescale(from: (0, 1), to: (0, MainSynth.sharedInstance.sustainMax)).rescale(value)
+            }.subscribe(onNext: {
+                MainSynth.sharedInstance.sustain = $0
+            }).addDisposableTo(disposeBag)
+        
+        envReleaseSlider.sliderValue.value = Rescale(from: (0, synth.releaseMax), to: (0, 1)).rescale(synth.release)
+        envReleaseSlider.sliderValue.asObservable().map { value in
+            return Rescale(from: (0, 1), to: (0, MainSynth.sharedInstance.releaseMax)).rescale(value)
+            }.subscribe(onNext: {
+                MainSynth.sharedInstance.release = $0
+            }).addDisposableTo(disposeBag)
     }
     
 }
 
 //************************************************************
-// MARK: - Slider Delegate
+// MARK: - Keyboard Delegate
 //************************************************************
 
-extension MainViewController: SliderDelegate {
-    func sliderValueDidChange(_ value: Double, tag: Int) {
-        switch tag {
-        case 100:
-            synth.attack = value
-        case 101:
-            synth.decay = value
-        case 102:
-            synth.sustain = value
-        case 103:
-            synth.release = value
-        default:
-            break
-        }
+extension MainViewController: KeyboardViewNoteDelegate {
+    
+    func midiNoteDown(midiNoteNumber: Int) {
+        synth.noteOn(MIDINoteNumber(midiNoteNumber))
     }
+    
+    func midiNoteUp(midiNoteNumber: Int) {
+        synth.noteOff(MIDINoteNumber(midiNoteNumber))
+    }
+    
 }
 
 //************************************************************

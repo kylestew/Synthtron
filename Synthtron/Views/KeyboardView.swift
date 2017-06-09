@@ -55,10 +55,15 @@ class KeyboardView: UIView {
     }
     
     private func sequenceKeys() {
+        keys = []
         for i in 0..<keyCount {
             keys.append(PianoKey(type: whiteBlackSequence[i % whiteBlackSequence.count], index: i))
         }
         numWhiteKeys = keys.filter{ $0.type == .white }.count
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        sequenceKeys()
     }
     
     override func draw(_ rect: CGRect) {

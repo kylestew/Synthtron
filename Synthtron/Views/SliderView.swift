@@ -1,8 +1,5 @@
 import UIKit
-
-protocol SliderDelegate: class {
-    func sliderValueDidChange(_ value: Double, tag: Int)
-}
+import RxSwift
 
 @IBDesignable
 class SliderView: UIControl {
@@ -15,37 +12,16 @@ class SliderView: UIControl {
     @IBInspectable var trackWidth: CGFloat = 6.0
     
     //************************************************************
-    // MARK: Public properties
+    // MARK: RX Observable
     //************************************************************
     
-    weak var delegate: SliderDelegate?
-    
-    var minValue: Double = 0.0
-    var maxValue: Double = 1.0
-    
-    // domain: [minValue, maxValue]
-    var value = 0.5 {
-        didSet {
-            // bound by min/max
-            value = min(max(value, minValue), maxValue)
-            delegate?.sliderValueDidChange(value, tag: self.tag)
-            updateView()
-        }
-    }
+    var sliderValue = Variable(0.0)
     
     //************************************************************
     // MARK: Private properties
     //************************************************************
     
-    // domain: unitized [0, 1]
-    private var sliderValue:CGFloat {
-        get {
-            return CGFloat(Rescale(from: (minValue, maxValue), to: (0, 1)).rescale(value))
-        }
-        set {
-            value = Rescale(from: (0, 1), to: (minValue, maxValue)).rescale(Double(newValue))
-        }
-    }
+    private let disposeBag = DisposeBag()
     
     private let knobLayer = CALayer()
     
@@ -99,31 +75,27 @@ class SliderView: UIControl {
         // track relative movement of finger
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.panGestureRecognized(_:)))
         addGestureRecognizer(panGesture)
-    }
-    
-    func updateView() {
-        CATransaction.begin()
-        CATransaction.setDisableActions(true) // don't animate transition or it will lag
         
-        // position knob
-        var heightRange = bounds.height - knobRadius * 2.0
-        heightRange *= 1.0 - sliderValue
-        knobLayer.position.y = heightRange + knobRadius
-        knobLayer.position.x = round(((bounds.width - trackWidth) / 2.0) + trackWidth / 2.0)
+        // update position of knob on next value
+        sliderValue.asObservable().subscribe(onNext: { [unowned self] nextValue in
+            CATransaction.begin()
+            CATransaction.setDisableActions(true) // don't animate transition or it will lag
         
-        CATransaction.commit()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        updateView()
+            // position knob
+            var heightRange = self.bounds.height - self.knobRadius * 2.0
+            heightRange *= 1.0 - CGFloat(nextValue)
+            self.knobLayer.position.y = heightRange + self.knobRadius
+            self.knobLayer.position.x = round(((self.bounds.width - self.trackWidth) / 2.0) + self.trackWidth / 2.0)
+        
+            CATransaction.commit()
+        }).addDisposableTo(disposeBag)
     }
     
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()!
         
         let fillColor = UIColor(red: 0.122, green: 0.122, blue: 0.137, alpha: 1.000)
-        let fillColor2 = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
+//        let fillColor2 = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
         let shadowTint = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
         
         let shadow = NSShadow()
@@ -213,12 +185,12 @@ class SliderView: UIControl {
     //************************************************************
     
     var lastPosition = CGPoint.zero
-    var lastValue:CGFloat = 0.0
+    var lastValue:Double = 0.0
     func panGestureRecognized(_ recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .began:
             lastPosition = knobLayer.position
-            lastValue = sliderValue
+            lastValue = sliderValue.value
             
         case .changed:
             // find new potential position
@@ -227,8 +199,12 @@ class SliderView: UIControl {
             trans.x = 0
             let newPos = lastPosition + trans
             
-            // calculate based on value
-            sliderValue = CGFloat(Rescale(from: (Double(knobRadius), Double(bounds.height - knobRadius)), to: (1, 0)).rescale(Double(newPos.y)))
+            // convert position to unit value [0, 1]
+            var unitValue = Rescale(from: (Double(knobRadius), Double(bounds.height - knobRadius)), to: (1, 0)).rescale(Double(newPos.y))
+            unitValue = min(max(unitValue, 0), 1)
+            
+            // update observable, our UI will move on its own to match value
+            sliderValue.value = unitValue
             
         default:
             break

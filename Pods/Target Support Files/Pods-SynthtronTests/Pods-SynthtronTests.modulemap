@@ -1,0 +1,6 @@
+framework module Pods_SynthtronTests {
+  umbrella header "Pods-SynthtronTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
