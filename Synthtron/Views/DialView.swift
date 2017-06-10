@@ -1,8 +1,33 @@
 import UIKit
 
+enum DialViewColor: Int {
+    case blue
+    case green
+}
+
 class DialView : UIView {
     
-    let innerDial = CALayer()
+    var tickColor:DialViewColor? {
+        didSet {
+            let bundle = Bundle(for: type(of: self))
+            switch tickColor! {
+            case .blue:
+                tickImage = UIImage(named: "knob_tick_blue", in: bundle, compatibleWith: self.traitCollection)!
+            case .green:
+                tickImage = UIImage(named: "knob_tick_green", in: bundle, compatibleWith: self.traitCollection)!
+            }
+            layoutSubviews()
+        }
+    }
+    
+    var rotation = 0.0 {
+        didSet { updateDialRotation() }
+    }
+    
+    private let innerDial = CALayer()
+    private let rotatorLayer = CALayer()
+    private let tickLayer = CALayer()
+    private var tickImage: UIImage?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -14,8 +39,19 @@ class DialView : UIView {
         setupView()
     }
     
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupView()
+    }
+    
     func setupView() {
+        rotatorLayer.addSublayer(tickLayer)
+        innerDial.addSublayer(rotatorLayer)
         layer.addSublayer(innerDial)
+    }
+    
+    func updateDialRotation() {
+        rotatorLayer.transform = CATransform3DMakeRotation(CGFloat(rotation), 0, 0, 1)
     }
     
     override func layoutSubviews() {
@@ -38,8 +74,23 @@ class DialView : UIView {
         innerDial.shadowRadius = 8.0
         innerDial.shadowOpacity = 1.0
         
+        // inner cicle hidden rotator
+        print(innerDial.bounds)
+        rotatorLayer.frame = innerDial.bounds
+        rotatorLayer.backgroundColor = UIColor.red.cgColor
+//        r
         
+        
+        // tick mark
+        var rect = rotatorLayer.frame
+        rect.size.width = 3
+        rect.size.height = 11
+        rect.origin.x = (bounds.size.width / 2.0) - 1.5
+        rect.origin.y += 3.0
+        tickLayer.frame = rect
+        tickLayer.contents = tickImage?.cgImage
+        
+        updateDialRotation()
     }
-    
     
 }

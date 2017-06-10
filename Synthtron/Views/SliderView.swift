@@ -4,17 +4,14 @@ import RxSwift
 @IBDesignable
 class SliderView: UIControl {
     
+    var sliderThumbInner = UIImage(named: "slider_thumb_inner")
+    
     @IBInspectable var knobRadius: CGFloat = 9.0
     @IBInspectable var trackWidth: CGFloat = 6.0
     
     var sliderValue = Variable(0.0)
     
-    //************************************************************
-    // MARK: Private properties
-    //************************************************************
-    
     private let disposeBag = DisposeBag()
-    
     private let knobLayer = CALayer()
     
     required init?(coder: NSCoder) {
@@ -29,6 +26,10 @@ class SliderView: UIControl {
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
+        
+        let bundle = Bundle(for: type(of: self))
+        sliderThumbInner = UIImage(named: "slider_thumb_inner", in: bundle, compatibleWith: self.traitCollection)!
+        
         setupView()
     }
     
@@ -36,6 +37,7 @@ class SliderView: UIControl {
         contentMode = .redraw
         backgroundColor = .clear
         
+        // knob
         knobLayer.frame = CGRect(x: 0, y: 0, width: knobRadius*2.0, height: knobRadius*2.0)
         knobLayer.cornerRadius = knobRadius
         knobLayer.backgroundColor = UIColor(rgb: 0xCCCCCD).cgColor
@@ -43,6 +45,15 @@ class SliderView: UIControl {
         knobLayer.shadowRadius = 8.0
         knobLayer.shadowOpacity = 1.0
         layer.addSublayer(knobLayer)
+        
+        // knob inner
+        let knobInnerLayer = CALayer()
+        let inset = round(((1.0-(5.0/9.0)) * knobLayer.bounds.width) / 2.0)
+        knobInnerLayer.frame = knobLayer.bounds.insetBy(dx: inset, dy: inset)
+//        knobInnerLayer.backgroundColor = UIColor.red.cgColor
+        knobInnerLayer.contents = sliderThumbInner?.cgImage
+        knobLayer.addSublayer(knobInnerLayer)
+        
         
         
         // TODO: add inner stuff on knobLayer if yuou can

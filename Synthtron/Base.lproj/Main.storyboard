@@ -236,12 +236,17 @@
                                         <rect key="frame" x="491.5" y="76" width="155.5" height="104"/>
                                         <subviews>
                                             <view tag="200" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2W-X7-U1c" customClass="KnobView" customModule="Synthtron" customModuleProvider="target">
-                                                <rect key="frame" x="12.5" y="24" width="52" height="60"/>
+                                                <rect key="frame" x="12.5" y="26" width="52" height="58"/>
                                                 <color key="backgroundColor" red="0.98494917150000005" green="0.0" blue="0.0092208533660000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="biK-di-FRc"/>
+                                                    <constraint firstAttribute="height" constant="58" id="biK-di-FRc"/>
                                                     <constraint firstAttribute="width" constant="52" id="nNF-EV-cjB"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tickColorIndex">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DELAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kf-8S-xCr">
                                                 <rect key="frame" x="77" y="84" width="78" height="20"/>
@@ -253,12 +258,17 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view tag="201" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="929-Jl-arG" customClass="KnobView" customModule="Synthtron" customModuleProvider="target">
-                                                <rect key="frame" x="89.5" y="24" width="52" height="60"/>
+                                                <rect key="frame" x="89.5" y="26" width="52" height="58"/>
                                                 <color key="backgroundColor" red="0.98494917150000005" green="0.0" blue="0.0092208533660000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="52" id="4hO-Hn-tuR"/>
-                                                    <constraint firstAttribute="height" constant="60" id="o1z-PR-dQR"/>
+                                                    <constraint firstAttribute="height" constant="58" id="o1z-PR-dQR"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tickColorIndex">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REVERB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1y-Xv-Oq0">
                                                 <rect key="frame" x="0.0" y="84" width="77" height="20"/>
@@ -334,11 +344,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJk-0W-cvJ" customClass="AKOutputWaveformPlot" customModule="AudioKit">
-                                <rect key="frame" x="603" y="0.0" width="64" height="32"/>
+                                <rect key="frame" x="517" y="0.0" width="150" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="BrG-4g-UVR"/>
-                                    <constraint firstAttribute="width" constant="64" id="mij-Ad-zUZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="QHs-xJ-7PQ"/>
+                                    <constraint firstAttribute="width" constant="150" id="Vrh-G8-J6i"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -367,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="115" y="121.875"/>
+            <point key="canvasLocation" x="114.69265367316342" y="120.8"/>
         </scene>
     </scenes>
 </document>

@@ -1,9 +1,21 @@
 import UIKit
 import PlaygroundSupport
 
+enum DialViewColor {
+    case blue
+    case green
+}
+
+@IBDesignable
 class DialView : UIView {
     
-    let innerDial = CALayer()
+//    @IBInspectable var dialColor: DialViewColor = .blue {
+//        didSet {
+//        }
+//    }
+    
+    private let innerDial = CALayer()
+    private let tickLayer = CALayer()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -17,6 +29,7 @@ class DialView : UIView {
     
     func setupView() {
         layer.addSublayer(innerDial)
+        layer.addSublayer(tickLayer)
     }
     
     override func layoutSubviews() {
@@ -39,14 +52,26 @@ class DialView : UIView {
         innerDial.shadowRadius = 8.0
         innerDial.shadowOpacity = 1.0
         
-        
+        // tick mark
+        let x:CGFloat = 0
+        let y:CGFloat = 0
+        let width:CGFloat = 9
+        let height:CGFloat = 33
+        var rect = innerDial.frame
+        rect.size.width = 3
+        rect.size.height = 11
+        rect.origin.x = (bounds.size.width / 2.0) - 1.5
+        rect.origin.y += 3.0
+        tickLayer.frame = rect
+        if let tickImage = UIImage(named: "knob_tick_blue") {
+            tickLayer.contents = tickImage.cgImage
+        }
     }
-    
     
 }
 
 
-let view = UIView(frame: CGRect(x: 0, y:0, width: 300, height: 340))
+let view = UIView(frame: CGRect(x: 0, y:0, width: 52, height: 52))
 
 var rect = view.frame
 rect.size.height = rect.size.width
