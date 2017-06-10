@@ -143,11 +143,11 @@ class KeyboardView: UIView {
     
     fileprivate func velocityForPoint(_ point: CGPoint) -> Int {
         // [0, height] --> [0, 120]
-        print(point)
-        let vel = Int((point.y / bounds.height) * 120)
-        print(vel)
-//        Rescale(from: (0, bounds.height), to: (0, 120))
-        return vel
+        if let key = keyAtPoint(point) {
+            let height = key.type == .white ? bounds.height : bounds.height * blackKeyHeightPercentage
+            return Int((point.y / height) * 120)
+        }
+        return 0
     }
     
     func enforceMonophonic() {

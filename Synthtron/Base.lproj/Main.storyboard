@@ -368,11 +368,16 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="delayKnob" destination="929-Jl-arG" id="vg5-kk-7Uh"/>
+                        <outlet property="dirtySlider" destination="y0O-vs-y12" id="aar-cD-mbh"/>
                         <outlet property="envAttackSlider" destination="Bf7-jS-M86" id="4d8-4I-ExZ"/>
                         <outlet property="envDecaySlider" destination="3n3-DI-Hme" id="IAa-Pj-5vB"/>
                         <outlet property="envReleaseSlider" destination="UrT-Lz-3KF" id="cUC-7F-OOw"/>
                         <outlet property="envSustainSlider" destination="BQf-c4-HJF" id="Fh3-qc-EDE"/>
+                        <outlet property="fatSlider" destination="5fn-qd-yap" id="bkC-g0-lob"/>
                         <outlet property="keyboardView" destination="FN9-yJ-O4S" id="KIn-Qd-NNz"/>
+                        <outlet property="reverbKnob" destination="Y2W-X7-U1c" id="sSF-7I-sbP"/>
+                        <outlet property="thinSlider" destination="A2B-60-3sN" id="84I-ZM-Xd9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

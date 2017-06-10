@@ -24,6 +24,7 @@ class DualVCO: AKPolyphonicNode {
         }
     }
     
+    // internal waveform index
     func indexFromWaveform(waveform: Waveform) -> Double {
         switch waveform {
         case .Silent:
@@ -55,6 +56,7 @@ class DualVCO: AKPolyphonicNode {
     
     var attackDuration = 0.1 {
         didSet {
+            print(attackDuration)
             if attackDuration < 0.02 { attackDuration = 0.02 }
             vco1.attackDuration = attackDuration
             vco2.attackDuration = attackDuration
@@ -87,8 +89,6 @@ class DualVCO: AKPolyphonicNode {
     var vco1: AKMorphingOscillatorBank
     var vco2: AKMorphingOscillatorBank
     var vcoMixer: AKDryWetMixer
-    
-//    var filterEnvelope:LPFwithLFO?
     
     override init() {
         var empty = AKTable()
@@ -132,16 +132,11 @@ class DualVCO: AKPolyphonicNode {
     override func play(noteNumber: MIDINoteNumber, velocity: MIDIVelocity) {
         vco1.play(noteNumber: noteNumber, velocity: velocity)
         vco2.play(noteNumber: noteNumber, velocity: velocity)
-        
-//        filterEnvelope?.gate = 1.0
     }
     
-    /// Function to stop or bypass the node, both are equivalent
     override func stop(noteNumber: MIDINoteNumber) {
         vco1.stop(noteNumber: noteNumber)
         vco2.stop(noteNumber: noteNumber)
-        
-//        filterEnvelope?.gate = 0.0
     }
     
 }

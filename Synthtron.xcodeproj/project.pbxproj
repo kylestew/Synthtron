@@ -12,6 +12,7 @@
 		FF0807FC1EE1217000A2F89F /* AudioKit.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = FF0807FA1EE1217000A2F89F /* AudioKit.framework.dSYM */; };
 		FF0808001EE121E200A2F89F /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0807F91EE1217000A2F89F /* AudioKit.framework */; };
 		FF0808011EE121E200A2F89F /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FF0807F91EE1217000A2F89F /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FF4E437B1EEC6B8E00BEE152 /* LPFwithLFO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E437A1EEC6B8E00BEE152 /* LPFwithLFO.swift */; };
 		FF5711751EE9FFFD0038E9D5 /* Rescale.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5711741EE9FFFD0038E9D5 /* Rescale.swift */; };
 		FF5711771EEA007B0038E9D5 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5711761EEA007B0038E9D5 /* KnobView.swift */; };
 		FF57117A1EEA0C940038E9D5 /* MainSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5711791EEA0C940038E9D5 /* MainSynth.swift */; };
@@ -67,6 +68,7 @@
 		FF0807F91EE1217000A2F89F /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		FF0807FA1EE1217000A2F89F /* AudioKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AudioKit.framework.dSYM; sourceTree = "<group>"; };
 		FF0897BB1EE231D30020C73F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		FF4E437A1EEC6B8E00BEE152 /* LPFwithLFO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPFwithLFO.swift; sourceTree = "<group>"; };
 		FF5711741EE9FFFD0038E9D5 /* Rescale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rescale.swift; sourceTree = "<group>"; };
 		FF5711761EEA007B0038E9D5 /* KnobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnobView.swift; sourceTree = "<group>"; };
 		FF5711791EEA0C940038E9D5 /* MainSynth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainSynth.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				FF5711791EEA0C940038E9D5 /* MainSynth.swift */,
 				FF57117B1EEA15240038E9D5 /* DualVCO.swift */,
 				FF57117D1EEA15850038E9D5 /* Waveform.swift */,
+				FF4E437A1EEC6B8E00BEE152 /* LPFwithLFO.swift */,
 			);
 			path = SynthModules;
 			sourceTree = "<group>";
@@ -223,8 +226,8 @@
 			children = (
 				FF05FE031EEB53CA003B7D9B /* Components */,
 				FFFA8AC31EE23134003E7093 /* KeyboardView.swift */,
-				FFCD29831EE6FC9F000C2909 /* SliderView.swift */,
 				FF5711761EEA007B0038E9D5 /* KnobView.swift */,
+				FFCD29831EE6FC9F000C2909 /* SliderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				FF57117E1EEA15850038E9D5 /* Waveform.swift in Sources */,
 				FFFA8AC41EE23134003E7093 /* KeyboardView.swift in Sources */,
 				FF5711751EE9FFFD0038E9D5 /* Rescale.swift in Sources */,
+				FF4E437B1EEC6B8E00BEE152 /* LPFwithLFO.swift in Sources */,
 				FF58A2831EE100F100402855 /* AppDelegate.swift in Sources */,
 				FF989A3D1EE1179C00D1148B /* UIColor+Extensions.swift in Sources */,
 				FFE817AA1EE9F76300D9B42A /* CGPoint+Extensions.swift in Sources */,

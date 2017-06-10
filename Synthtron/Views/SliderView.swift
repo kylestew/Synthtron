@@ -33,7 +33,14 @@ class SliderView: UIControl {
         setupView()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupView()
+    }
+    
     func setupView() {
+        layer.sublayers = nil
+        
         contentMode = .redraw
         backgroundColor = .clear
         

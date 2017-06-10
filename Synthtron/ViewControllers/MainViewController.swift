@@ -11,6 +11,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var envSustainSlider: SliderView!
     @IBOutlet weak var envReleaseSlider: SliderView!
     
+    @IBOutlet weak var dirtySlider: SliderView!
+    @IBOutlet weak var fatSlider: SliderView!
+    @IBOutlet weak var thinSlider: SliderView!
+    
+    @IBOutlet weak var reverbKnob: KnobView!
+    @IBOutlet weak var delayKnob: KnobView!
+    
     let disposeBag = DisposeBag()
     let synth = MainSynth.sharedInstance
 
@@ -56,6 +63,43 @@ class MainViewController: UIViewController {
             return Rescale(from: (0, 1), to: (0, MainSynth.sharedInstance.releaseMax)).rescale(value)
             }.subscribe(onNext: {
                 MainSynth.sharedInstance.release = $0
+            }).addDisposableTo(disposeBag)
+        
+        
+        dirtySlider.sliderValue.value = Rescale(from: (0, synth.dirtyMax), to: (0, 1)).rescale(synth.dirty)
+        dirtySlider.sliderValue.asObservable().map { value in
+            return Rescale(from: (0, 1), to: (0, MainSynth.sharedInstance.dirtyMax)).rescale(value)
+            }.subscribe(onNext: {
+                MainSynth.sharedInstance.dirty = $0
+            }).addDisposableTo(disposeBag)
+        
+        fatSlider.sliderValue.value = Rescale(from: (0, synth.fatMax), to: (0, 1)).rescale(synth.fat)
+        fatSlider.sliderValue.asObservable().map { value in
+            return Rescale(from: (0, 1), to: (0, MainSynth.sharedInstance.fatMax)).rescale(value)
+            }.subscribe(onNext: {
+                MainSynth.sharedInstance.fat = $0
+            }).addDisposableTo(disposeBag)
+        
+        thinSlider.sliderValue.value = Rescale(from: (0, synth.thinMax), to: (0, 1)).rescale(synth.thin)
+        thinSlider.sliderValue.asObservable().map { value in
+            return Rescale(from: (0, 1), to: (0, MainSynth.sharedInstance.thinMax)).rescale(value)
+            }.subscribe(onNext: {
+                MainSynth.sharedInstance.thin = $0
+            }).addDisposableTo(disposeBag)
+        
+        
+        reverbKnob.knobValue.value = Rescale(from: (0, synth.reverbMax), to: (0, 1)).rescale(synth.reverbAmount)
+        reverbKnob.knobValue.asObservable().map { value in
+            return Rescale(from: (0, 1), to: (0, MainSynth.sharedInstance.releaseMax)).rescale(value)
+            }.subscribe(onNext: {
+                MainSynth.sharedInstance.reverbAmount = $0
+            }).addDisposableTo(disposeBag)
+        
+        delayKnob.knobValue.value = Rescale(from: (0, synth.delayMax), to: (0, 1)).rescale(synth.delayAmount)
+        delayKnob.knobValue.asObservable().map { value in
+            return Rescale(from: (0, 1), to: (0, MainSynth.sharedInstance.delayMax)).rescale(value)
+            }.subscribe(onNext: {
+                MainSynth.sharedInstance.delayAmount = $0
             }).addDisposableTo(disposeBag)
     }
     
