@@ -68,7 +68,6 @@ class KnobView : UIControl {
             
             // update rotation of knob
             self.dialView.rotation = Rescale(from: (0, 1), to: (-Double.pi * (4/5.0), Double.pi * (4/5.0))).rescale(Double(nextValue))
-//            print("\(nextValue) -> \(self.dialView.rotation)")
             
             CATransaction.commit()
         }).addDisposableTo(disposeBag)

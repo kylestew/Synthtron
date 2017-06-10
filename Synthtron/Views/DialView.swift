@@ -45,9 +45,9 @@ class DialView : UIView {
     }
     
     func setupView() {
-        rotatorLayer.addSublayer(tickLayer)
-        innerDial.addSublayer(rotatorLayer)
         layer.addSublayer(innerDial)
+        layer.addSublayer(rotatorLayer)
+        rotatorLayer.addSublayer(tickLayer)
     }
     
     func updateDialRotation() {
@@ -75,18 +75,15 @@ class DialView : UIView {
         innerDial.shadowOpacity = 1.0
         
         // inner cicle hidden rotator
-        print(innerDial.bounds)
-        rotatorLayer.frame = innerDial.bounds
-        rotatorLayer.backgroundColor = UIColor.red.cgColor
-//        r
-        
+        rotatorLayer.transform = CATransform3DIdentity // need to clear transform before resetting frame
+        rotatorLayer.frame = innerDial.frame
         
         // tick mark
-        var rect = rotatorLayer.frame
+        var rect = rotatorLayer.bounds
         rect.size.width = 3
         rect.size.height = 11
-        rect.origin.x = (bounds.size.width / 2.0) - 1.5
-        rect.origin.y += 3.0
+        rect.origin.x = (rotatorLayer.bounds.size.width / 2.0) - 1.5
+        rect.origin.y += 4.0
         tickLayer.frame = rect
         tickLayer.contents = tickImage?.cgImage
         
