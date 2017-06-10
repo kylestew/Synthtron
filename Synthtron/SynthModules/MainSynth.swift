@@ -99,6 +99,7 @@ class MainSynth {
         
         AudioKit.output = output
         AudioKit.start()
+//        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
         
         // apply initial high level settings
         updateDirty()

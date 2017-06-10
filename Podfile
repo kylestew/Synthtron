@@ -6,6 +6,7 @@ target 'Synthtron' do
   use_frameworks!
 
   # Pods for Synthtron
+  pod 'AudioKit'
   pod 'RxSwift',    '~> 3.0'
   pod 'RxCocoa',    '~> 3.0'
 

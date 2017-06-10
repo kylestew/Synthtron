@@ -1,16 +1,19 @@
 PODS:
+  - AudioKit (3.6)
   - RxCocoa (3.4.0):
     - RxSwift (~> 3.4)
   - RxSwift (3.4.0)
 
 DEPENDENCIES:
+  - AudioKit
   - RxCocoa (~> 3.0)
   - RxSwift (~> 3.0)
 
 SPEC CHECKSUMS:
+  AudioKit: 7823de92f3c9570178d2347042867b6a93be1464
   RxCocoa: d14ef6b6029e1ddc6e966508c09289090de68ff9
   RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
 
-PODFILE CHECKSUM: 8b5b3e69d6e4866a8f09bb70b9fd54bd4290e0ee
+PODFILE CHECKSUM: afdeca0905b9f8772eb30a7e2f09a2555ae39088
 
 COCOAPODS: 1.2.1

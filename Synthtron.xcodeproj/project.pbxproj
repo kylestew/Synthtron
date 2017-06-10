@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		856DDB021A759F16F84DFE56 /* Pods_Synthtron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A88DCC109AA17A04329A1A /* Pods_Synthtron.framework */; };
 		B9AEE747AC923E0D4E66A733 /* Pods_SynthtronTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656ED25F784CC4B6B390A00E /* Pods_SynthtronTests.framework */; };
-		FF0807FC1EE1217000A2F89F /* AudioKit.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = FF0807FA1EE1217000A2F89F /* AudioKit.framework.dSYM */; };
-		FF0808001EE121E200A2F89F /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0807F91EE1217000A2F89F /* AudioKit.framework */; };
-		FF0808011EE121E200A2F89F /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FF0807F91EE1217000A2F89F /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FF4E437B1EEC6B8E00BEE152 /* LPFwithLFO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E437A1EEC6B8E00BEE152 /* LPFwithLFO.swift */; };
 		FF5711751EE9FFFD0038E9D5 /* Rescale.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5711741EE9FFFD0038E9D5 /* Rescale.swift */; };
 		FF5711771EEA007B0038E9D5 /* KnobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5711761EEA007B0038E9D5 /* KnobView.swift */; };
@@ -51,7 +48,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FF0808011EE121E200A2F89F /* AudioKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,8 +61,6 @@
 		95246588C77A230712F4032E /* Pods-SynthtronTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynthtronTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SynthtronTests/Pods-SynthtronTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C98AB6C7FE55A8892E1FCDE7 /* Pods-SynthtronTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SynthtronTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SynthtronTests/Pods-SynthtronTests.release.xcconfig"; sourceTree = "<group>"; };
 		F9FE8E01DD36EE6F92A2277A /* Pods-Synthtron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Synthtron.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Synthtron/Pods-Synthtron.debug.xcconfig"; sourceTree = "<group>"; };
-		FF0807F91EE1217000A2F89F /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
-		FF0807FA1EE1217000A2F89F /* AudioKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AudioKit.framework.dSYM; sourceTree = "<group>"; };
 		FF0897BB1EE231D30020C73F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		FF4E437A1EEC6B8E00BEE152 /* LPFwithLFO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPFwithLFO.swift; sourceTree = "<group>"; };
 		FF5711741EE9FFFD0038E9D5 /* Rescale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rescale.swift; sourceTree = "<group>"; };
@@ -99,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF0808001EE121E200A2F89F /* AudioKit.framework in Frameworks */,
 				856DDB021A759F16F84DFE56 /* Pods_Synthtron.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,19 +139,9 @@
 		FF0807F71EE1215100A2F89F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				FF0807F81EE1217000A2F89F /* AudioKit */,
 			);
 			name = Libraries;
 			path = ../Libraries;
-			sourceTree = "<group>";
-		};
-		FF0807F81EE1217000A2F89F /* AudioKit */ = {
-			isa = PBXGroup;
-			children = (
-				FF0807F91EE1217000A2F89F /* AudioKit.framework */,
-				FF0807FA1EE1217000A2F89F /* AudioKit.framework.dSYM */,
-			);
-			path = AudioKit;
 			sourceTree = "<group>";
 		};
 		FF5711781EEA0C6F0038E9D5 /* SynthModules */ = {
@@ -265,6 +248,7 @@
 				FF0808021EE121E200A2F89F /* Embed Frameworks */,
 				688441F8F0621BA438987B9E /* [CP] Embed Pods Frameworks */,
 				3C0FACD2FEE7DE875601E2F8 /* [CP] Copy Pods Resources */,
+				FFF77D4C1EEC88DA00C971B6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -309,7 +293,7 @@
 					FF58A27E1EE100F000402855 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 3D926V5A83;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					FF58A2921EE100F100402855 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -343,7 +327,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF0807FC1EE1217000A2F89F /* AudioKit.framework.dSYM in Resources */,
 				FF58A28D1EE100F100402855 /* LaunchScreen.storyboard in Resources */,
 				FF58A28A1EE100F100402855 /* Assets.xcassets in Resources */,
 				FFF5CCDC1EE64658007D39C3 /* RobotoMono-Bold.ttf in Resources */,
@@ -451,6 +434,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SynthtronTests/Pods-SynthtronTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		FFF77D4C1EEC88DA00C971B6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/AudioKit.framework/fix-framework.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -614,15 +610,14 @@
 			baseConfigurationReference = F9FE8E01DD36EE6F92A2277A /* Pods-Synthtron.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3D926V5A83;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/AudioKit",
-				);
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Synthtron/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.synthtron.Synthtron;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.Synthtron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -632,15 +627,16 @@
 			baseConfigurationReference = 4966A18C593B65961C0ADEE4 /* Pods-Synthtron.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 3D926V5A83;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Libraries/AudioKit",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Synthtron/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.synthtron.Synthtron;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kylestewart.Synthtron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "014956be-006f-474a-8348-3f66d7e0507f";
+				PROVISIONING_PROFILE_SPECIFIER = "Sythtron Distro";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
